@@ -8,7 +8,6 @@ cityInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") getWeather();
 });
 
-
 async function getWeather() {
   const city = cityInput.value.trim();
   if (!city) {
@@ -59,7 +58,7 @@ async function getWeather() {
 }
 
 function showLoading() {
-    weatherInfo.innerHTML = `<div class="loading">🌤️ Fetching weather...</div>`;
+  weatherInfo.innerHTML = `<div class="loading">🌤️ Fetching weather...</div>`;
 }
 function getWeatherIcon(weatherText) {
   const lower = weatherText.toLowerCase();
@@ -72,12 +71,11 @@ function getWeatherIcon(weatherText) {
   return "🌤️";
 }
 
-
 function escapeHTML(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '<')
-        .replace(/>/g, '>')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#x27;');
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "<")
+    .replace(/>/g, ">")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
 }
